@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  get 'apprentices/index'
-  get 'apprentices/new'
-  get 'apprentices/show'
-  get 'apprentices/edit'
-  get 'knights/index'
-  get 'knights/new'
-  get 'knights/show'
-  get 'knights/edit'
+
   get 'knights', to: 'knights#index', as: 'knights'
   get 'knights/new', to: 'knights#new', as: 'new_knight'
   post 'knights', to: 'knights#create'
