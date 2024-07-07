@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   patch 'knights/:id', to: 'knights#update'
   delete 'knights/:id', to: 'knights#destroy'
 
+  get '/knights/:knight_id/apprentices', to: 'apprentices#index_for_knight', as: 'knight_apprentices'
+
   get 'apprentices', to: 'apprentices#index', as: 'apprentices'
   get 'apprentices/new', to: 'apprentices#new', as: 'new_apprentice'
   post 'apprentices', to: 'apprentices#create'

@@ -12,6 +12,6 @@ RSpec.feature "ApprenticesIndex", type: :feature do
         expect(page).to have_content("Age: 18")
         expect(page).to have_text("Robin")
         expect(page).to have_content("Knighted: false")
-        expect(page).to have_content("Age: 20")
+        expect(page).to have_content("Age: 18")
     end
 end

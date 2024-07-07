@@ -7,6 +7,7 @@ class KnightsController < ApplicationController
   end
 
   def show
+    @knight = Knight.find(params[:id])
   end
 
   def edit
