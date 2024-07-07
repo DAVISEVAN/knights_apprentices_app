@@ -1,5 +1,6 @@
 class KnightsController < ApplicationController
   def index
+    @knights = Knight.all
   end
 
   def new

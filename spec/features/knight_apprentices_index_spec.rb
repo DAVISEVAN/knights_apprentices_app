@@ -10,6 +10,10 @@ RSpec.feature "KnightApprenticesIndex", type: :feature do
         visit knight_apprentices_path(knight)
 
         expect(page).to have_text("Patsy")
+        expect(page).to have_content("Knighted: false")
+        expect(page).to have_content("Age: 18")
         expect(page).to have_text("Robin")
+        expect(page).to have_content("Knighted: false") 
+        expect(page).to have_content("Age: 20")
     end
 end

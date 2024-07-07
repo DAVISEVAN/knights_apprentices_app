@@ -1,2 +1,7 @@
-<h1>Knights#index</h1>
-<p>Find me in app/views/knights/index.html.erb</p>
+<h1>Knights</h1>
+<ul>
+  <% @knights.each do |knight| %>
+    <li><%= link_to knight.name, knight_path(knight) %></li>
+  <% end %>
+</ul>
+

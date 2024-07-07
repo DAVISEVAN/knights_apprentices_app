@@ -1,5 +1,6 @@
 class ApprenticesController < ApplicationController
   def index
+    @apprentices = Apprentice.all
   end
 
   def new
