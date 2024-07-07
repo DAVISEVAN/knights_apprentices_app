@@ -1,6 +1,6 @@
 class KnightsController < ApplicationController
   def index
-    @knights = Knight.all
+    @knights = Knight.order(created_at: :desc)
   end
 
   def new

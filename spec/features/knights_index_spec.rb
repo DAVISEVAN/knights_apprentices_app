@@ -7,7 +7,8 @@ RSpec.feature "KnightsIndex", type: :feature do
 
         visit knights_path
 
-        expect(page).to have_content("Sir Lancelot") 
-        expect(page).to have_content("Sir Galahad")
+        expect(knight2.name).to appear_before(knight1.name) 
+        expect(page).to have_content("Created at: #{knight1.created_at.strftime("%B %d, %Y %H:%M")}")
+        expect(page).to have_content("Created at: #{knight2.created_at.strftime("%B %d, %Y %H:%M")}")
     end
 end

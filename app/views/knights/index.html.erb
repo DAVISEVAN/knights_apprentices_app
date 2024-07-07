@@ -1,7 +1,9 @@
 <h1>Knights</h1>
 <ul>
   <% @knights.each do |knight| %>
-    <li><%= link_to knight.name, knight_path(knight) %></li>
+    <li>
+    <%= link_to knight.name, knight_path(knight) %> - Created at: <%= knight.created_at.strftime("%B %d, %Y %H:%M") %>
+    </li>
   <% end %>
 </ul>
 

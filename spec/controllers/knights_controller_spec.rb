@@ -11,7 +11,7 @@ RSpec.describe KnightsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      Knight.create! valid_attributes
+      knight = FactoryBot.create(:knight)
       get :index
       expect(response).to be_successful
     end
@@ -19,7 +19,7 @@ RSpec.describe KnightsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      knight = Knight.create! valid_attributes
+      knight = FactoryBot.create(:knight)
       get :show, params: { id: knight.to_param }
       expect(response).to be_successful
     end
