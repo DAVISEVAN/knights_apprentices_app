@@ -2,3 +2,4 @@
 <p>Active: <%= @knight.is_active %></p>
 <p>Number of Quests: <%= @knight.number_of_quests %></p>
 <p>Number of Apprentices: <%= @knight.apprentices.count %></p>
+<p><%= link_to "View Apprentices", knight_apprentices_path(@knight) %></p>
