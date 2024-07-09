@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'knights', to: 'knights#index', as: 'knights'
+  get 'knights/new', to: 'knights#new', as: 'new_knight'
+  post 'knights', to: 'knights#create'
+  get 'knights/:id', to: 'knights#show', as: 'knight'
+  get 'knights/:id/edit', to: 'knights#edit', as: 'edit_knight'
+  patch 'knights/:id', to: 'knights#update'
+  delete 'knights/:id', to: 'knights#destroy'
 
   get '/knights/:knight_id/apprentices', to: 'apprentices#index_for_knight', as: 'knight_apprentices'
 
