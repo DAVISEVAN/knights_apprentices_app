@@ -54,7 +54,7 @@ group :development, :test do
   gem 'capybara'
   gem 'orderly'
   gem 'launchy'
-  gem 'simplecov', require: false
+  gem 'simplecov', require: true
   gem 'shoulda-matchers'
 end
 

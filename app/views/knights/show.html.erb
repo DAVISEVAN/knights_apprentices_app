@@ -1,2 +1,7 @@
-<h1>Knights#show</h1>
-<p>Find me in app/views/knights/show.html.erb</p>
+<h1><%= @knight.name %></h1>
+<p>Active: <%= @knight.is_active %></p>
+<p>Number of Quests: <%= @knight.number_of_quests %></p>
+<p>Number of Apprentices: <%= @knight.apprentices.count %></p>
+<p><%= link_to "View Apprentices", knight_apprentices_path(@knight) %></p>
+<p><%= link_to "Update Knight", edit_knight_path(@knight) %></p>
+<%= link_to 'Back to Knights', knights_path %>

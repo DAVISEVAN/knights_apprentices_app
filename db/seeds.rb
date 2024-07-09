@@ -1,9 +1,41 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'faker'
+
+# Clear existing data
+Knight.destroy_all
+Apprentice.destroy_all
+
+# Create knights
+knight1 = Knight.create!(
+  name: "Sir Lancelot",
+  is_active: true,
+  number_of_quests: 10,
+  created_at: 2.days.ago
+)
+knight2 = Knight.create!(
+  name: "Sir Galahad",
+  is_active: true,
+  number_of_quests: 5,
+  created_at: 1.day.ago
+)
+
+# Create apprentices for knight1
+3.times do
+  Apprentice.create!(
+    name: Faker::Name.name,
+    is_knighted: false,
+    age: rand(18..25),
+    knight: knight1
+  )
+end
+
+# Create apprentices for knight2
+2.times do
+  Apprentice.create!(
+    name: Faker::Name.name,
+    is_knighted: false,
+    age: rand(18..25),
+    knight: knight2
+  )
+end
+
+puts "Seeded database with #{Knight.count} knights and #{Apprentice.count} apprentices."

@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <%= link_to 'Knights Index', knights_path %> |
+        <%= link_to 'Apprentices Index', apprentices_path %>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

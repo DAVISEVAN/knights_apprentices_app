@@ -1,2 +1,10 @@
-<h1>Knights#index</h1>
-<p>Find me in app/views/knights/index.html.erb</p>
+<h1>Knights</h1>
+<p><%= link_to "New Knight", new_knight_path %></p>
+<ul>
+  <% @knights.each do |knight| %>
+    <li>
+    <%= link_to knight.name, knight_path(knight) %> - Created at: <%= knight.created_at.strftime("%B %d, %Y %H:%M") %>
+    </li>
+  <% end %>
+</ul>
+
