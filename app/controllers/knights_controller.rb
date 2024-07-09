@@ -21,6 +21,16 @@ class KnightsController < ApplicationController
   end
 
   def edit
+    @knight = Knight.find(params[:id])
+  end
+
+  def update
+    @knight = Knight.find(params[:id])
+    if @knight.update(knight_params)
+      redirect_to knight_path(@knight)
+    else
+      render :edit
+    end
   end
 
 
