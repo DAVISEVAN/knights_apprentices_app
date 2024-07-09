@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   delete 'knights/:id', to: 'knights#destroy'
 
   get '/knights/:knight_id/apprentices', to: 'apprentices#index_for_knight', as: 'knight_apprentices'
+  get '/knights/:knight_id/apprentices/new', to: 'apprentices#new', as: 'new_knight_apprentice'
+  post '/knights/:knight_id/apprentices', to: 'apprentices#create'
+  
 
   get 'apprentices', to: 'apprentices#index', as: 'apprentices'
   get 'apprentices/new', to: 'apprentices#new', as: 'new_apprentice'

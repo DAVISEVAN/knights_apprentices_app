@@ -1,3 +1,6 @@
 <h1><%= @apprentice.name %></h1>
 <p>Knighted: <%= @apprentice.is_knighted %></p>
 <p>Age: <%= @apprentice.age %></p>
+<p><%= link_to "Update Apprentice", edit_apprentice_path(@apprentice) %></p>
+<%= link_to 'Back to Apprentices', apprentices_path %>
+<%= link_to 'Back to Knights', knights_path %>
